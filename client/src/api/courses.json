@@ -1,0 +1,22 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "Javascript cho người mới bắt đầu",
+            "image": "cafedev_javascript.png",
+            "price": 12000
+        },
+        {
+            "id": 2,
+            "name": "Cấu trúc dữ liệu và giải thuật",
+            "image": "Data_Structures_Algorithms.jpg",
+            "price": 20000
+        },
+        {
+            "id": 3,
+            "name": "Giải tích 2",
+            "image": "GIAI-TICH-2-1.jpg",
+            "price": 30000
+        }
+    ]
+}
