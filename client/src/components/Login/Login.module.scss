@@ -1,0 +1,40 @@
+@import '../../styles/mixins';
+.container {
+    max-width: 350px;
+    @include d-flex(column, center, center);
+    margin: 0 auto;
+    margin-top: 60px;
+    .title {
+        text-align: start;
+        font-weight: 500;
+    }
+    .input-field {
+        border: 1px solid black;
+        padding-left: 10px;
+        height: 50px;
+        width: 333px;
+        margin-top: 20px;
+        @include d-flex(row, center, flex-start);
+        input {
+            border: none;
+            width: 100%;
+            height: 100%;
+            margin-left: 5px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .login {
+        @include d-flex(row, center, center);
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        color: white;
+        border: none;
+        background-color: rgb(5, 109, 245);
+        &:hover {
+            background-color: rgb(5, 49, 245);
+        }
+    }
+}
