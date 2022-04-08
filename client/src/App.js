@@ -5,6 +5,7 @@ import Courses from './components/Courses/Courses';
 import NavBar from './components/NavBar/NavBar';
 import Banner from './components/Banner/Banner';
 import Login from './components/Login/Login';
+import CourseDetail from './components/CourseDetail/CourseDetail';
 const App = () => {
   return (
     <div className='wrapper'>
@@ -12,6 +13,7 @@ const App = () => {
       <div className='body-container'>
       <Routes>
         <Route path='/login' element={<Login />}/>
+        <Route path='/course/:id' element={<CourseDetail />}/>
         <Route path='/' element={
           <>
             <Banner />

@@ -1,10 +1,16 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins';
+a {
+    text-decoration: none;
+    color: black;
+}
 .container {
     &:hover {
         box-shadow: $shadow;
         transform: scale(1.1);
     }
+    height: 350px;
+    cursor: pointer;
     transition: all 0.3s;
     img {
         width: 100%;
