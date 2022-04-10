@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import Banner from './components/Banner/Banner';
 import Login from './components/Login/Login';
 import CourseDetail from './components/CourseDetail/CourseDetail';
+import Cart from './components/Cart/Cart';
 const App = () => {
   return (
     <div className='wrapper'>
@@ -20,6 +21,7 @@ const App = () => {
             <Courses />
           </>
         }/>
+        <Route path='/cart' element={<Cart />}/>
       </Routes>
       </div>
     </div>

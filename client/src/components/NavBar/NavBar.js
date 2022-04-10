@@ -19,7 +19,9 @@ const NavBar = () => {
             </ul>
             <div className={styles['user']}>
                 <span>
-                    <FontAwesomeIcon icon={faShoppingCart} className={styles['cart']}/>
+                    <Link to='/cart'>
+                        <FontAwesomeIcon icon={faShoppingCart} className={styles['cart']}/>
+                    </Link>
                 </span>
                 <Link to='/login'>
                     <button className={`${commonStyles['button']} ${styles['login']}`}>Log in</button>
