@@ -13,6 +13,7 @@ import './App.scss';
 import store from './store/index';
 import { getCourses } from './store/actions/course';
 
+import Checkout from './components/Cart/Checkout/Checkout';
 const App = () => {
   useEffect(() => {
     store.dispatch(getCourses());
@@ -36,6 +37,7 @@ const App = () => {
               }
             />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/cart/checkout' element={<Checkout />} />
           </Routes>
         </div>
       </div>

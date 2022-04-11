@@ -1,0 +1,26 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+.container {
+    width: 100%;
+    @include d-flex(column, normal, flex-start);
+    p {
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 10px;
+        &:nth-child(2) {
+            font-weight: 600;
+            font-size: 30px;
+        }
+    }
+    .checkout {
+        margin-top: 20px;
+        width: 100%;
+        height: 55px;
+        background-color: $primaryBlue;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+    }
+}

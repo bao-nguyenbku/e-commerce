@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import { useMatch } from 'react-router-dom';
 // import courses from '../../api/courses.json';
-import styles from './CourseDetail.module.scss';
-import common from '../../styles/Common.module.scss';
 import { getCourse } from '../../store/actions/course';
 import { useSelector, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 
-const CourseDetail = () => {
+import styles from './CourseDetail.module.scss';
+import common from '../../styles/Common.module.scss';
+import Spinner from '../Spinner/Spinner';
+
+const CourseDetail = ({ course: { course, loading }, getCourse }) => {
   let match = useMatch('/course/:id');
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCourse(match.params.id));
+    getCourse(match.params.id);
   }, []);
 
-  const course = useSelector((state) => state.course.course);
-
   //   console.log(course);
-  return (
+  return loading || course === null ? (
+    <Spinner />
+  ) : (
     <div className={styles['container']}>
       <div className={styles['background']}>
         <img src={require(`../../images/${course.image}`)} alt='banner' />
@@ -52,4 +54,8 @@ const CourseDetail = () => {
   );
 };
 
-export default CourseDetail;
+const mapStateToProps = (state) => ({
+  course: state.course,
+});
+
+export default connect(mapStateToProps, { getCourse })(CourseDetail);

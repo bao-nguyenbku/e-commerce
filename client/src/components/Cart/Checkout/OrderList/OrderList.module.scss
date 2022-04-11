@@ -1,0 +1,17 @@
+@import '../../../../styles/mixins';
+.order {
+    height: 80px;
+    width: 100%;
+    @include d-flex(row, center, space-between);
+    .description {
+        height: 100%;
+        @include d-flex(row, center, center);
+        img {
+            height: 80%;
+        }
+        p {
+            padding-left: 10px;
+            font-weight: 600;
+        }
+    }
+}

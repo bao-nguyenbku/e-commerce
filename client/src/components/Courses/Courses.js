@@ -4,6 +4,7 @@ import styles from './Courses.module.scss';
 import { useSelector } from 'react-redux';
 // import coursesData from '../../api/courses.json';
 
+// ? Add Spinner here when loading
 const Courses = () => {
   const coursesData = useSelector((state) => state.course.courses);
 
