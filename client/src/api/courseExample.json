@@ -1,0 +1,56 @@
+{
+    "id": 1,
+    "name": "Nguyên lý ngôn ngữ lập trình",
+    "chap": [{
+        "number": 1,
+        "layout": [
+            {
+                "heading": "Giới thiệu về phân tích từ vựng",
+                "content": ["Cái gì đó"]
+            },
+            {
+                "heading": "Giới thiệu phân tích cú pháp",
+                "content": ["Path to video", "Cái gì đó", "Parser là gì"]
+            },
+            {
+                "heading": "Bài tập",
+                "content": [{
+                    "exercise": 1,
+                    "question": ["Câu lệnh sau có bao nhiêu token?", "Image"],
+                    "answer": "Có 12 token trong câu lệnh trên"
+                },
+                {
+                    "exercise": 2,
+                    "question": ["Các luật sinh không kết thúc?", "Image"],
+                    "answer": "A, B, C"
+                }]
+            }
+        ]
+    },
+    {
+        "number": 2,
+        "layout": [
+            {
+                "heading": "",
+                "content": [""]
+            },
+            {
+                "heading": "",
+                "content": ["Path to video", "Cái gì đó", "Parser là gì"]
+            },
+            {
+                "heading": "",
+                "content": [{
+                    "exercise": 1,
+                    "question": ["Câu lệnh sau có bao nhiêu token?", "Image"],
+                    "answer": "Có 12 token trong câu lệnh trên"
+                },
+                {
+                    "exercise": 2,
+                    "question": ["Các luật sinh không kết thúc?", "Image"],
+                    "answer": "A, B, C"
+                }]
+            }
+        ]
+    }]
+}

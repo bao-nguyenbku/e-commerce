@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Checkout.module.scss';
 import paypal from '../../../images/paypal-logo.png';
-import img from '../../../images/GIAI-TICH-2-1.jpg';
+
 import OrderList from './OrderList/OrderList';
 const Checkout = () => {
   return (
