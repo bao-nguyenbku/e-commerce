@@ -1,0 +1,123 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.background {
+  @include d-flex(row, normal, normal);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 60%, #f7f9fa 40%);
+}
+.container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 98.4rem;
+  .title {
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  .summary-background {
+    height: inherit;
+    width: 40vw;
+    padding-left: 40px;
+    padding-top: 200px;
+    padding-right: 10%;
+    background-color: #f7f9fa;
+  }
+  .summary {
+    hr {
+      height: 4px;
+      background-color: rgb(222, 222, 222);
+      border: none;
+      border-radius: 10px;
+    }
+
+    .total {
+      @include d-flex(row, center, space-between);
+      font-weight: 600;
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+    .proceed {
+      border: none;
+      background-color: $primaryBlue;
+      color: white;
+      height: 60px;
+      width: 100%;
+      font-size: 25px;
+      font-weight: 700;
+    }
+    .terms-of-service {
+      line-height: 1.4;
+      color: rgb(167, 167, 167);
+      strong {
+        color: $primaryBlue;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .overview {
+      padding-right: 40px;
+      padding-left: 10%;
+    & > p {
+      font-size: 40px;
+      font-weight: 600;
+    }
+    .billing-address {
+      #country-select {
+        height: 50px;
+        width: 200px;
+        border: 1px solid black;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .payment-method {
+      margin-top: 70px;
+      & > p {
+        font-size: 30px;
+        font-weight: 600;
+      }
+      .method-container {
+        border: 1px solid #d1d7dc;
+        width: 100%;
+        background: none;
+        .method-panel {
+          display: table;
+          border-collapse: collapse;
+          height: 50px;
+          background-color: rgb(247, 249, 250);
+          border-bottom: 1px solid #d1d7dc;
+          @include d-flex(row, center, flex-start);
+          label {
+            height: 100%;
+            @include d-flex(row, center, center);
+            padding: 5px;
+
+            p {
+              margin-left: 10px;
+              font-size: 20px;
+              font-weight: 600;
+            }
+            img {
+              border-radius: 5px;
+              height: 80%;
+            }
+          }
+        }
+        .content {
+          & > p {
+            padding: 10px;
+          }
+        }
+      }
+    }
+    .orders {
+      .order-list {
+        @include d-flex(column, flex-start, center);
+      }
+    }
+  }
+}

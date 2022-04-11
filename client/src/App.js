@@ -7,6 +7,7 @@ import Banner from './components/Banner/Banner';
 import Login from './components/Login/Login';
 import CourseDetail from './components/CourseDetail/CourseDetail';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Cart/Checkout/Checkout';
 const App = () => {
   return (
     <div className='wrapper'>
@@ -22,6 +23,7 @@ const App = () => {
           </>
         }/>
         <Route path='/cart' element={<Cart />}/>
+        <Route path='/cart/checkout' element={<Checkout />}/>
       </Routes>
       </div>
     </div>
