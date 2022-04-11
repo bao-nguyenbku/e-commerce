@@ -2,18 +2,23 @@ import React, { useEffect } from 'react';
 import { useMatch } from 'react-router-dom';
 // import courses from '../../api/courses.json';
 import { getCourse } from '../../store/actions/course';
-import { useSelector, useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
+import { addItem } from '../../store/actions/cart';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './CourseDetail.module.scss';
 import common from '../../styles/Common.module.scss';
 import Spinner from '../Spinner/Spinner';
 
-const CourseDetail = ({ course: { course, loading }, getCourse }) => {
+const CourseDetail = () => {
+  const loading = useSelector((state) => state.course.loading);
+  const course = useSelector((state) => state.course.course);
+
   let match = useMatch('/course/:id');
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    getCourse(match.params.id);
+    dispatch(getCourse(match.params.id));
   }, []);
 
   //   console.log(course);
@@ -45,7 +50,14 @@ const CourseDetail = ({ course: { course, loading }, getCourse }) => {
           </div>
           <div className={styles['payment']}>
             <p>20.000đ</p>
-            <button className={styles['payment-btn']}>Add to cart</button>
+            <button
+              className={styles['payment-btn']}
+              onClick={(e) => {
+                dispatch(addItem(course));
+              }}
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
@@ -54,8 +66,4 @@ const CourseDetail = ({ course: { course, loading }, getCourse }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  course: state.course,
-});
-
-export default connect(mapStateToProps, { getCourse })(CourseDetail);
+export default CourseDetail;
