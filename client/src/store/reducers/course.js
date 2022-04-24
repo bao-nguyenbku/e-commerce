@@ -1,10 +1,18 @@
-import { GET_COURSES, GET_COURSE, COURSE_ERROR } from '../actions/types.js';
+import {
+  GET_COURSES,
+  GET_COURSE,
+  COURSE_ERROR,
+  CHANGE_LINK,
+} from "../actions/types.js";
 
 const initialState = {
   courses: [],
   course: null,
   loading: true,
   error: {},
+
+  // Hung
+  learningLink: "",
 };
 
 const courseReducer = (state = initialState, action) => {
@@ -28,6 +36,11 @@ const courseReducer = (state = initialState, action) => {
         ...state,
         error: payload,
         loading: false,
+      };
+    case CHANGE_LINK:
+      return {
+        ...state,
+        learningLink: payload,
       };
     default:
       return state;
