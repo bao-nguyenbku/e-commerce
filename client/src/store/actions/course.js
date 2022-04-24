@@ -1,5 +1,5 @@
-import { GET_COURSE, GET_COURSES, COURSE_ERROR } from './types.js';
-import coursesData from '../../api/courses.json';
+import { GET_COURSE, GET_COURSES, COURSE_ERROR, CHANGE_LINK } from "./types.js";
+import coursesData from "../../api/courses.json";
 
 export const getCourses = () => async (dispatch) => {
   try {
@@ -13,7 +13,7 @@ export const getCourses = () => async (dispatch) => {
     dispatch({
       type: COURSE_ERROR,
       payload: {
-        msg: 'Courses Not Found',
+        msg: "Courses Not Found",
       },
     });
   }
@@ -30,7 +30,28 @@ export const getCourse = (id) => async (dispatch) => {
     dispatch({
       type: COURSE_ERROR,
       payload: {
-        msg: 'Course Not Found',
+        msg: "Course Not Found",
+      },
+    });
+  }
+};
+
+export const changeLesson = (link) => async (dispatch) => {
+  try {
+    // dispatch({
+    //   type: CHANGE_LINK,
+    //   payload: "",
+    // });
+
+    dispatch({
+      type: CHANGE_LINK,
+      payload: link,
+    });
+  } catch (error) {
+    dispatch({
+      type: COURSE_ERROR,
+      payload: {
+        msg: "Course Not Found",
       },
     });
   }
