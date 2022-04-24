@@ -1,24 +1,31 @@
+import { REMOVE_ITEM, ADD_ITEM } from '../actions/types';
+
 const initState = {
-    cartQuantity: 40
-}
+  items: [],
+  quantity: 0,
+};
 
 const cartReducer = (state = initState, action) => {
-    switch (action.type) {
-        case 'INCREASE': {
-            const newQty = state.cartQuantity + 1;
-            return {
-                cartQuantity: newQty
-            }
-        }
-        case 'DECREASE': {
-            const newQty = state.cartQuantity - 1;
-            return {
-                cartQuantity: newQty
-            }
-        }
-        default:
-            return state
+  const { type, payload } = action;
+
+  switch (type) {
+    case ADD_ITEM: {
+      return {
+        ...state,
+        items: [payload, ...state.items],
+        quantity: state.quantity + 1,
+      };
     }
-}
+    case REMOVE_ITEM: {
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== payload.id),
+        quantity: state.quantity - 1,
+      };
+    }
+    default:
+      return state;
+  }
+};
 
 export default cartReducer;

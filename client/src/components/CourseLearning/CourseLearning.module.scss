@@ -1,0 +1,23 @@
+.parent {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  height: 75vh;
+  margin: 5rem 0;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 6 / 7;
+  margin: 0 1rem;
+}
+
+.div2 {
+  grid-area: 1 / 7 / 6 / 9;
+}
+
+h1 {
+  display: block;
+}

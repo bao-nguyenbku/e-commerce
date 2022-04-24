@@ -1,21 +1,30 @@
 import React from 'react';
-import styles from './CartItem.module.scss';
-import img from '../../../images/GIAI-TICH-2-1.jpg';
+import { useDispatch } from 'react-redux';
+import { removeItem } from '../../../store/actions/cart';
 
-const CartItem = () => {
+import styles from './CartItem.module.scss';
+
+const CartItem = ({ item }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className={styles['container']}>
-      <img src={img} alt="thumbnail" />
+      <img src={require(`../../../images/${item.image}`)} alt='thumbnail' />
       <div className={styles['description']}>
-        <p>Complete Angular Developer in 2022: Zero to Mastery</p>
+        <p>{item.name}</p>
         <p>By ConceptCourse</p>
       </div>
       <div className={styles['price-action']}>
-        <p>23.560đ</p>
-        <button className={styles['remove']}>Remove</button>
+        <p>{item.price}đ</p>
+        <button
+          className={styles['remove']}
+          onClick={(e) => dispatch(removeItem(item))}
+        >
+          Remove
+        </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CartItem
+export default CartItem;
