@@ -17,6 +17,18 @@
             "name": "Giải tích 2",
             "image": "GIAI-TICH-2-1.jpg",
             "price": 30000
+        },
+        {
+            "id": 4,
+            "name": "Nhập môn trí tuệ nhân tạo",
+            "image": "2612-cong-to-vien-AI.jpg",
+            "price": 17000
+        },
+        {
+            "id": 5,
+            "name": "Lập trình ứng dụng di động",
+            "image": "mobile-app.jpg",
+            "price": 15000
         }
     ]
 }

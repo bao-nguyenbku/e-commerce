@@ -21,7 +21,6 @@ const CourseDetail = () => {
     dispatch(getCourse(match.params.id));
   }, []);
 
-  //   console.log(course);
   return loading || course === null ? (
     <Spinner />
   ) : (
@@ -32,7 +31,7 @@ const CourseDetail = () => {
       <div className={styles['banner-container']}>
         <div className={styles['banner']}>
           <div className={styles['title']}>
-            <h2>Data structures and Algorithm - from zero to hero</h2>
+            <h2>{course.name}</h2>
             <span>
               Created by <span>Concept Courses</span>
             </span>
@@ -45,11 +44,11 @@ const CourseDetail = () => {
             </p>
           </div>
           <div className={styles['info']}>
-            <p>Duration</p>
-            <p>Num of task</p>
+            <p>Duration <span>36h</span></p>
+            <p>Num of task <span>12</span></p>
           </div>
           <div className={styles['payment']}>
-            <p>20.000đ</p>
+            <p>{course.price} đ</p>
             <button
               className={styles['payment-btn']}
               onClick={(e) => {

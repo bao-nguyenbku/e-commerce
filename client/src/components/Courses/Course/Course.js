@@ -9,7 +9,7 @@ const Course = ({ course }) => {
         <div className={styles['info']}>
           <span>{course.name}</span>
           <span>Củng cố kiến thức nền tảng</span>
-          <span>20.000đ</span>
+          <span>{course.price} đ</span>
         </div>
       </div>
     </Link>
