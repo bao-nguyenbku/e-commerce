@@ -6,7 +6,6 @@ import { addItem } from '../../store/actions/cart';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './CourseDetail.module.scss';
-import common from '../../styles/Common.module.scss';
 import Spinner from '../Spinner/Spinner';
 
 const CourseDetail = () => {

@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import styles from './Login.module.scss';
-import commonStyles from '../../styles/Common.module.scss';
 const Login = () => {
   return (
     <div className={styles['container']}>

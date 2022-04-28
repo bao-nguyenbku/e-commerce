@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './OrderList.module.scss';
-import img from '../../../../images/GIAI-TICH-2-1.jpg';
-import { useSelector } from 'react-redux';
 
 const OrderList = ({ item }) => {
   return (

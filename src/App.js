@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import Courses from "./components/Courses/Courses";
