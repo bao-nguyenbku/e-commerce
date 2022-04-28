@@ -1,0 +1,156 @@
+{
+    "id": 1,
+    "name": "Nguyên lý ngôn ngữ lập trình",
+    "chap": [{
+        "number": 1,
+        "name": "Phân tích từ vựng",
+        "layout": [
+            {
+                "heading": "Video bài giảng",
+                "content": ["https://www.youtube.com/watch?v=vUmKTL5C3hA",
+                            "https://www.youtube.com/watch?v=LRBdmwtd2hY",
+                            "https://www.youtube.com/watch?v=tU_b9aCaEuo",
+                            "https://www.youtube.com/watch?v=8TbkSMoO9dQ",
+                            "https://www.youtube.com/watch?v=ADOq4BFxvfQ",
+                            "https://www.youtube.com/watch?v=zXnmAAvI3kU",
+                            "https://www.youtube.com/watch?v=HlSgaLcp4FA"]
+            },
+            {
+                "heading": "Vai trò",
+                "content": ["- Giống như một bộ tách từ: Đầu vào là 1 chuỗi nhiều ký tự. Bộ phân tích từ vựng đề tác các từ ra từ chuỗi liên tục đó.",
+                            "- Giống như một bộ kiểm tra chính tả: Sau khi tách từ, các từ sai sẽ ra cảnh báo lỗi.",
+                            "- Giống một bộ phân lớp: Các từ đúng sẽ phân ra làm loại nào.",
+                            "- Xác định các chuỗi con (lexemes).",
+                            "- Trả về tokens: lớp, loại của lexeme.",
+                            "- Bỏ đi khoảng trắng, xuống hàng vì không có tác dụng.",
+                            "- Ghi nhận lại vị trí các tokens."]
+            },
+            {
+                "heading": "Hiện thực",
+                "content": ["Finite Automata (Automata hữu hạn): hay dùng cho cấp máy.",
+                            "Regular Expressions (Biểu thức chính quy): cách biểu diễn gần với con người, dễ hiểu, dễ xây dựng luật hơn."]
+            },
+            {
+                "heading": "Bài tập",
+                "content": [{
+                    "exercise": 1,
+                    "question": ["Cho đoạn mã viết bằng ngôn ngữ C sau: i = a = b * 34 + c5; Hỏi bộ phân tích từ vựng sẽ lần lượt trả về bao nhiêu tokens cho đoạn mã trên?"],
+                    "answer": "10"
+                },
+                {
+                    "exercise": 2,
+                    "question": ["Cho đoạn mã viết bằng ngôn ngữ C sau: i += a * 24; Hỏi bộ phân tích từ vựng sẽ lần lượt trả về bao nhiêu tokens cho đoạn mã trên?"],
+                    "answer": "6"
+                },
+                {
+                    "exercise": 3,
+                    "question": ["Cho đoạn mã viết bằng ngôn ngữ C sau: a[12] = inc * (dec - 1); Hỏi bộ phân tích từ vựng sẽ lần lượt trả về bao nhiêu tokens cho đoạn mã trên?"],
+                    "answer": "13"
+                }]
+            }
+        ]
+    },
+    {
+        "number": 2,
+        "name": "Phân tích ngữ pháp",
+        "layout": [
+            {
+                "heading": "Video bài giảng",
+                "content": ["https://www.youtube.com/watch?v=3bbKfqrO3YI",
+                            "https://www.youtube.com/watch?v=6K6W1IlZsaQ",
+                            "https://www.youtube.com/watch?v=3ROLBNifYYk",
+                            "https://www.youtube.com/watch?v=euXndqLg3cA",
+                            "https://www.youtube.com/watch?v=UKm-N-AznAg",
+                            "https://www.youtube.com/watch?v=zalDjGQ2ssg",
+                            "https://www.youtube.com/watch?v=0ZptOPjUI8U"]
+            },
+            {
+                "heading": "Vai trò",
+                "content": ["- Đọc chuỗi token từ phân tích từ vựng tả ra.",
+                            "- Nếu chuỗi token đúng thì sẽ tạo ra output là một parse tree hoặc abstract syntax tree (AST - cây cú pháp trừu tượng).",
+                            "- Nếu chuỗi sai sẽ đưa ra error message.",
+                            "- Xác định trình tự các token có đúng với các luật văn phạm không."]
+            },
+            {
+                "heading": "Viết ngữ pháp",
+                "content": ["Dựa trên đặc tả ngôn ngữ: Mỗi ngôn ngữ có đặc tả riêng của nó, đôi khi khác suy nghĩ bình thường. Vì vậy, khi làm không nên dựa vào suy nghĩ thông thường của mình mà phải đọc kỹ đặc tả của ngôn ngữ. Khi có mô tả khác đi, phải tuân theo mô tả đó.",
+                            "Cố gắng tìm kiếm cấu trúc phân lớp của ngôn ngữ: Mỗi ngôn ngữ thường có cấu trúc phân lớp. Cần cố gắng nhìn ra cấu trúc đó -> viết văn phạm theo cấu trúc đó thì rất là dễ dàng.",
+                            "Tập trung vào thứ tự xuất hiện của các đơn vị văn phạm (token): không cần quan tâm về nghĩa hay các ràng buộc khác của chúng. Các ràng buộc về scope (khai báo trước mới được dùng), name resolution (phân giải tên), kiểu dữ liệu các toán hạn có đúng hay không … không thể giải quyết ở bước này. -> Cần phân biệt phần nào sẽ dành do phân tích văn phạm (thứ tự các token), phần nào dành cho phân tích ngữ nghĩa (scope, thứ tự thực thi phép toán, …).",
+                            "Cố gắng dùng đệ quy cho các cấu trúc lặp nhiều lần: Một vài ngôn ngữ cho phép các danh sách vô hạn của các phần tử."]
+            },
+            {
+                "heading": "Bài tập",
+                "content": [{
+                    "exercise": 1,
+                    "question": ["Cho các luật sinh của văn phạm như sau: M -> a X b; X -> c Y | d; Y -> m Y | ∈; Ký hiệu bắt đầu của văn phạm trên là?"],
+                    "answer": "M"
+                },
+                {
+                    "exercise": 2,
+                    "question": ["Dùng các luật sinh của văn phạm đã được nêu ở câu trên. Hãy cho biết tập các ký hiệu kết thúc của văn phạm trên?"],
+                    "answer": "{a,b,c,d,m}"
+                },
+                {
+                    "exercise": 3,
+                    "question": ["Dùng cùng văn phạm của câu trên, hãy cho biết số các luật sinh trong văn phạm trên?"],
+                    "answer": "5"
+                }
+            ]
+            }
+        ]
+    },
+    {
+        "number": 3,
+        "name": "Cây cú pháp trừu tượng",
+        "layout": [
+            {
+                "heading": "Video bài giảng",
+                "content": ["https://www.youtube.com/watch?v=MqLuMVjLNUQ",
+                            "https://www.youtube.com/watch?v=BrefuB8bQyE",
+                            "https://www.youtube.com/watch?v=29-ASfoxlmo",
+                            "https://www.youtube.com/watch?v=b2JrdgSEtoU",
+                            "https://www.youtube.com/watch?v=3hISaxxxckY",
+                            "https://www.youtube.com/watch?v=zWWMQg0SeZ4",
+                            "https://www.youtube.com/watch?v=uOMtf8YR0EA",
+                            "https://www.youtube.com/watch?v=tmbhD363QU4",
+                            "https://www.youtube.com/watch?v=GTwVkgh3wDI&feature=emb_imp_woyt",
+                            "https://www.youtube.com/watch?v=R8hqxex81Mo"]
+            },
+            {
+                "heading": "ANTLR Parse Tree",
+                "content": ["- Khi phân tích một chương trình nguồn, sẽ tạo ra một cây parse tree.",
+                            "- Khi đọc grammar sẽ sinh ra một class với tên là tên của grammar (văn phạm).",
+                            "- Một ký hiệu không kết thúc sẽ sinh ra inner class (class lồng bên trong). Tên giống nhưng ký tự đầu là chữ hoa và thên Context vào cuối. Ví dụ: ký hiệu không kết thúc assign có class là AssignContext. Các đối tượng của class là node trên cây parse tree.",
+                            "- Các ký hiệu kết thúc là terminal node, giá trị của các node này là các token.",
+                            "- Các ký hiệu không kết thúc là các đối tượng của các inner class tương ứng."]
+            },
+            {
+                "heading": "Chuyển đổi Parse Tree sang AST",
+                "content": ["- Cây phân tích cú pháp có rất là nhiều những loại node khác nhau. Mỗi node ứng với một ký hiệu không kết thúc. Có rất nhiều loại ký hiệu không kết thúc nên có rất nhiều loại node khác nhau.",
+                            "- Mỗi node có số node con khác nhau.",
+                            "- Dùng visitor pattern để duyệt cây."]
+            },
+            {
+                "heading": "Visitor Generated by ANTLR",
+                "content": ["- Để sinh từ ANTLR cần dùng option -visitor.",
+                            "- Phương thức accept được thêm vào mỗi inner class.",
+                            "- Tạo ra thêm 2 class <grammar name>+Visitor.java và <grammar name>+BaseVisitor.java.",
+                            "- Mỗi ký hiệu không kết thúc abc sẽ sinh ra phương thức visitAbc(ctx: AbcContext)."]
+            },
+            {
+                "heading": "Bài tập",
+                "content": [{
+                    "exercise": 1,
+                    "question": ["Cho văn phạm có các luật sinh sau: exp -> exp ADD term | term; term -> term MUL fact | fact; fact -> ID | INTLIT | LP exp RP; Với văn phạm trên, ANTLR sẽ sinh ra lớp Visitor có bao nhiêu phương thức visit chủ yếu ?"],
+                    "answer": "3"
+                },
+                {
+                    "exercise": 2,
+                    "question": ["Cho văn phạm của ngôn ngữ ABC có luật sinh sau: exp -> exp ADD term | term; Prototype của phương thức visit sinh ra bởi ANTLR cho luật sinh này là gì?"],
+                    "answer": "T visitExp(ABCParser.ExpContext ctx)"
+                }
+            ]
+            }
+        ]
+    }]
+}

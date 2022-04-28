@@ -12,15 +12,16 @@ const NavBar = () => {
     <nav className={styles['container']}>
       <div className={styles['logo']}>
         <Link to='/'>
-          <img
+          <p>ConceptCourse</p>
+          {/* <img
             src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg'
             alt=''
-          />
+          /> */}
         </Link>
       </div>
-      <ul>
+      {/* <ul>
         <li>Khoá học</li>
-      </ul>
+      </ul> */}
       <div className={styles['user']}>
         <span className={styles['cart-quantity']}>
           <Link to='/cart'>

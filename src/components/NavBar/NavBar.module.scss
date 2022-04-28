@@ -16,9 +16,15 @@
     width: 100px;
     display: flex;
     align-items: center;
-    img {
-      width: 100px;
-      height: 40px;
+    a {
+      @include d-flex(row, center, center);
+      p {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-weight: 600;
+      }
     }
   }
   ul {
