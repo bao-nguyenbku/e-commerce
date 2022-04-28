@@ -19,7 +19,7 @@ const CourseDetail = () => {
   useEffect(() => {
     dispatch(getCourse(match.params.id));
   }, []);
-
+  
   return loading || course === null ? (
     <Spinner />
   ) : (
