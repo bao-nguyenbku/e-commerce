@@ -3,7 +3,10 @@ import styles from './Checkout.module.scss';
 import paypal from '../../../images/paypal-logo.png';
 
 import OrderList from './OrderList/OrderList';
+import { useSelector } from 'react-redux';
 const Checkout = () => {
+  const total = useSelector(state => state.cart.total);
+  const items = useSelector(state => state.cart.items);
   return (
     <div className={styles['background']}>
       <div className={styles['container']}>
@@ -34,8 +37,9 @@ const Checkout = () => {
           <div className={styles['orders']}>
             <p className={styles['title']}>Order Summary</p>
             <div className={styles['order-list']}>
-              <OrderList />
-              <OrderList />
+              {items.map(item => {
+                return <OrderList key={item.id} item={item}/>
+              })}
             </div>
           </div>
         </div>
@@ -45,7 +49,7 @@ const Checkout = () => {
             <hr />
             <div className={styles['total']}>
               <span>Total:</span>
-              <span>450.340đ</span>
+              <span>{total} đ</span>
             </div>
             <button className={styles['proceed']}>Proceed</button>
             <p className={styles['terms-of-service']}>By completing your purchase you agree with <strong>Terms of service</strong>.</p>
