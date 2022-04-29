@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useMatch } from 'react-router-dom';
-// import courses from '../../api/courses.json';
-import { getCourse } from '../../store/actions/course';
-import { addItem } from '../../store/actions/cart';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { getCourse } from '../../store/actions/course';
+import { addItem } from '../../store/actions/cart';
 import styles from './CourseDetail.module.scss';
 import Spinner from '../Spinner/Spinner';
 
