@@ -1,14 +1,32 @@
 import { useEffect } from 'react';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
+import emailjs from '@emailjs/browser';
 
 // This values are the props in the UI
-const amount = '2';
 const style = { layout: 'vertical' };
-
-// Custom component to wrap the PayPalButtons and handle currency changes
-const ButtonWrapper = ({ currency }) => {
-  // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
-  // This is the main reason to wrap the PayPalButtons in a new component
+const ButtonWrapper = ({ currency, total }) => {
+  const sendEmail = () => {
+    emailjs
+      .send(
+        'service_vrdo8iw',
+        'template_jr7tskj',
+        {
+          from_name: 'ConceptCourse Team',
+          user_name: 'Vĩ',
+          message: 'Cảm ơn bạn đã mua và sử dụng khóa học của chúng mình ',
+          to_email: 'exstarquang@gmail.com',
+        },
+        '4a72-CqJ445qQRxO9'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
     <PayPalButtons
@@ -20,7 +38,7 @@ const ButtonWrapper = ({ currency }) => {
               {
                 amount: {
                   currency_code: currency,
-                  value: amount,
+                  value: total,
                 },
               },
             ],
@@ -30,9 +48,11 @@ const ButtonWrapper = ({ currency }) => {
             return orderId;
           });
       }}
-      onApprove={function (data, actions) {
+      onApprove={(data, actions) => {
         return actions.order.capture().then(function () {
           // Your code here after capture the order
+          console.log(' Payment Done');
+          sendEmail();
         });
       }}
     />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Checkout.module.scss';
 import paypal from '../../../images/paypal-logo.png';
 
@@ -9,6 +9,9 @@ import { useSelector } from 'react-redux';
 const currency = 'USD';
 
 const Checkout = () => {
+  const [paymentMethod, getpaymentMethod] = useState({
+    paypalPayment: false,
+  });
   const total = useSelector((state) => state.cart.total);
   const items = useSelector((state) => state.cart.items);
   return (
@@ -27,7 +30,15 @@ const Checkout = () => {
             <p className={styles['title']}>Payment method</p>
             <div className={styles['method-container']}>
               <div className={styles['method-panel']}>
-                <input type='radio' id='paypal-option' />
+                <input
+                  type='radio'
+                  id='paypal-option'
+                  onChange={() =>
+                    getpaymentMethod({
+                      paypalPayment: true,
+                    })
+                  }
+                />
                 <label htmlFor='paypal-option'>
                   <img src={paypal} alt='' />
                   <p>PayPal</p>
@@ -58,10 +69,16 @@ const Checkout = () => {
               <span>Total:</span>
               <span>{total} đ</span>
             </div>
-            <div style={{ maxWidth: '750px', minHeight: '200px' }}>
-              <ButtonWrapper currency={currency} />
-            </div>
-            <button className={styles['proceed']}>Proceed</button>
+            {paymentMethod.paypalPayment === true && total > 0 ? (
+              <div style={{ maxWidth: '750px', minHeight: '200px' }}>
+                <ButtonWrapper
+                  currency={currency}
+                  total={Math.floor(total / 22961 + 1)}
+                />
+              </div>
+            ) : (
+              <button className={styles['proceed']}>Proceed</button>
+            )}
             <p className={styles['terms-of-service']}>
               By completing your purchase you agree with{' '}
               <strong>Terms of service</strong>.
