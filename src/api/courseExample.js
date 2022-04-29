@@ -7,24 +7,44 @@ const data = {
       title: "Chương 1: Giới thiệu",
       lessons: [
         {
-          heading: "Giới thiệu về phân tích từ vựng",
+          heading: "Introduction",
           //   content: ["Cái gì đó"],
-          link: "https://youtu.be/kdXnPukWCEs",
+          link: "https://www.youtube.com/watch?v=kdXnPukWCEs",
         },
         {
-          heading: "Giới thiệu về phân tích từ vựng",
+          heading: "Why not RE?",
           //   content: ["Cái gì đó"],
-          link: "https://youtu.be/5Fm7Su9FYBk",
+          link: "https://www.youtube.com/watch?v=5Fm7Su9FYBk",
         },
         {
-          heading: "Giới thiệu về phân tích từ vựng",
+          heading: "CFG",
           //   content: ["Cái gì đó"],
-          link: "https://www.youtube.com/watch?v=1V6X0f9nY9A&list=PL-IaNIqGl01k-MQ6EvkNbaOFMNURQC0hG&index=3",
+          link: "https://www.youtube.com/watch?v=1V6X0f9nY9A",
         },
         {
-          heading: "Giới thiệu về phân tích từ vựng",
+          heading: "Derivation",
           //   content: ["Cái gì đó"],
-          link: "https://www.youtube.com/watch?v=gwLIZf9C0aE&list=PL-IaNIqGl01k-MQ6EvkNbaOFMNURQC0hG&index=4",
+          link: "https://www.youtube.com/watch?v=gwLIZf9C0aE",
+        },
+        {
+          heading: "CFL",
+          //   content: ["Cái gì đó"],
+          link: "https://www.youtube.com/watch?v=_qp1zXq3baI",
+        },
+        {
+          heading: "Language Recognition",
+          //   content: ["Cái gì đó"],
+          link: "https://www.youtube.com/watch?v=w32G_1v_LNU",
+        },
+        {
+          heading: "Write a grammar",
+          //   content: ["Cái gì đó"],
+          link: "https://www.youtube.com/watch?v=YAl_5A-Zq7Y",
+        },
+        {
+          heading: "Hierarchy structure",
+          //   content: ["Cái gì đó"],
+          link: "https://www.youtube.com/watch?v=tyZ_7juEZAQ",
         },
 
         // {
@@ -45,28 +65,48 @@ const data = {
       ],
     },
     {
-      number: 1,
-      title: "Chương 1: Giới thiệu",
+      number: 2,
+      title: "Chương 2: Cây cú pháp trừu tượng",
       lessons: [
         {
-          heading: "Giới thiệu về phân tích từ vựng",
+          heading: "Introduction",
           //   content: ["Cái gì đó"],
-          link: "https://www.youtube.com/watch?v=kdXnPukWCEs&list=PL-IaNIqGl01k-MQ6EvkNbaOFMNURQC0hG",
+          link: "https://www.youtube.com/watch?v=kdXnPukWCEs",
         },
         {
-          heading: "Giới thiệu về phân tích từ vựng",
+          heading: "Why not RE?",
           //   content: ["Cái gì đó"],
-          link: "https://www.youtube.com/watch?v=5Fm7Su9FYBk&list=PL-IaNIqGl01k-MQ6EvkNbaOFMNURQC0hG&index=2",
+          link: "https://www.youtube.com/watch?v=5Fm7Su9FYBk",
         },
         {
-          heading: "Giới thiệu về phân tích từ vựng",
+          heading: "CFG",
           //   content: ["Cái gì đó"],
-          link: "https://www.youtube.com/watch?v=1V6X0f9nY9A&list=PL-IaNIqGl01k-MQ6EvkNbaOFMNURQC0hG&index=3",
+          link: "https://www.youtube.com/watch?v=1V6X0f9nY9A",
         },
         {
-          heading: "Giới thiệu về phân tích từ vựng",
+          heading: "Derivation",
           //   content: ["Cái gì đó"],
-          link: "https://www.youtube.com/watch?v=gwLIZf9C0aE&list=PL-IaNIqGl01k-MQ6EvkNbaOFMNURQC0hG&index=4",
+          link: "https://www.youtube.com/watch?v=gwLIZf9C0aE",
+        },
+        {
+          heading: "CFL",
+          //   content: ["Cái gì đó"],
+          link: "https://www.youtube.com/watch?v=_qp1zXq3baI",
+        },
+        {
+          heading: "Language Recognition",
+          //   content: ["Cái gì đó"],
+          link: "https://www.youtube.com/watch?v=w32G_1v_LNU",
+        },
+        {
+          heading: "Write a grammar",
+          //   content: ["Cái gì đó"],
+          link: "https://www.youtube.com/watch?v=YAl_5A-Zq7Y",
+        },
+        {
+          heading: "Hierarchy structure",
+          //   content: ["Cái gì đó"],
+          link: "https://www.youtube.com/watch?v=tyZ_7juEZAQ",
         },
 
         // {
@@ -86,6 +126,7 @@ const data = {
         // },
       ],
     },
+
     // {
     //   number: 2,
     //   title: "Chương 2: Parser",
