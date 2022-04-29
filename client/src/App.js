@@ -42,6 +42,11 @@ const App = () => {
             <Route path="/cart/checkout" element={<Checkout />} />
 
             <Route path="/learning" element={<CourseLearning />} />
+            <Route
+              path="/learning/:videoId"
+              element={<CourseLearning />}
+              exact
+            />
           </Routes>
         </div>
       </div>
