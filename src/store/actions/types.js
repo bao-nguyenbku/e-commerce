@@ -6,4 +6,4 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 
 export const CHANGE_LINK = "CHANGE_LINK";
 export const LOGIN = 'LOGIN';
-export const LOGGOUT = 'LOGGOUT';
+export const LOGOUT = 'LOGOUT';

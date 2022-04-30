@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './NavBar.module.scss';
 import commonStyles from '../../styles/Common.module.scss';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-
+import { logout } from '../../store/actions/user';
 const NavBar = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['course-user']);
   const totalQuantity = useSelector((state) => state.cart.quantity);
-
+  const dispatch = useDispatch();
   const handleLoggout = () => {
     removeCookie('course-user', { path: '/', maxAge: 0 });
+    dispatch(logout());
   }
   return (
     <nav className={styles['container']}>

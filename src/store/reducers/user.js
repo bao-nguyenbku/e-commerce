@@ -1,4 +1,4 @@
-import { LOGIN, LOGGOUT } from "../actions/types";
+import { LOGIN, LOGOUT } from "../actions/types";
 
 const initState = {
     isLogin: false,
@@ -18,8 +18,14 @@ const loginReducer = (state = initState, action) => {
                 password: payload.password,
                 name: payload.name
             }
-        case LOGGOUT:
-            return state;
+        case LOGOUT:
+            return {
+                ...state,
+                isLogin: payload.isLogin,
+                email: '',
+                password: '',
+                name: ''
+            }
         default:
             return state;
     }
