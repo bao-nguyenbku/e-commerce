@@ -21,7 +21,10 @@ export const getCourses = () => async (dispatch) => {
 
 export const getCourse = (id) => async (dispatch) => {
   try {
-    const res = coursesData.courses.find((course) => course.id === parseInt(id));
+    const res = coursesData.courses.find(
+      (course) => course.id === parseInt(id)
+    );
+
     dispatch({
       type: GET_COURSE,
       payload: res,

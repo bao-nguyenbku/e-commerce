@@ -1,14 +1,17 @@
 .container {
   height: 75vh;
+  width: 100%;
+
   border: 1px solid;
 
-  overflow-y: auto;
+  // overflow-y: auto;
+  overflow-y: scroll;
 
   // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_scrollbar_keep_func
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  // -ms-overflow-style: none; /* IE and Edge */
+  // scrollbar-width: none; /* Firefox */
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
 }

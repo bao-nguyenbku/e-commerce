@@ -11,10 +11,11 @@ import CourseDetail from './components/CourseDetail/CourseDetail';
 import Cart from './components/Cart/Cart';
 import CourseLearning from './components/CourseLearning/CourseLearning';
 
-import './App.scss';
-import store from './store/index';
-import { getCourses } from './store/actions/course';
-import Checkout from './components/Cart/Checkout/Checkout';
+import "./App.scss";
+import store from "./store/index";
+import { getCourses } from "./store/actions/course";
+
+import Checkout from "./components/Cart/Checkout/Checkout";
 
 const App = () => {
   useEffect(() => {
