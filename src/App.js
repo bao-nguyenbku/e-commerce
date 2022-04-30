@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
-
+import { CookiesProvider } from 'react-cookie';
 import Courses from './components/Courses/Courses';
 import NavBar from './components/NavBar/NavBar';
 import Banner from './components/Banner/Banner';
@@ -30,28 +30,30 @@ const App = () => {
       }}
     >
       <Provider store={store}>
-        <div className='wrapper'>
-          <NavBar />
-          <div className='body-container'>
-            <Routes>
-              <Route path='/login' element={<Login />} />
-              <Route path='/course/:id' element={<CourseDetail />} />
-              <Route
-                path='/'
-                element={
-                  <>
-                    <Banner />
-                    <Courses />
-                  </>
-                }
-              />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/cart/checkout' element={<Checkout />} />
+        <CookiesProvider>
+          <div className='wrapper'>
+            <NavBar />
+            <div className='body-container'>
+              <Routes>
+                <Route path='/login' element={<Login />} />
+                <Route path='/course/:id' element={<CourseDetail />} />
+                <Route
+                  path='/'
+                  element={
+                    <>
+                      <Banner />
+                      <Courses />
+                    </>
+                  }
+                />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/cart/checkout' element={<Checkout />} />
 
-              <Route path='/learning' element={<CourseLearning />} />
-            </Routes>
+                <Route path='/learning' element={<CourseLearning />} />
+              </Routes>
+            </div>
           </div>
-        </div>
+        </CookiesProvider>
       </Provider>
     </PayPalScriptProvider>
   );

@@ -1,17 +1,17 @@
 import { LOGIN, LOGGOUT } from "./types";
 import users from '../../api/user.json';
 export const login = (user) => {
-    const currentUser = users.users.filter(u => u.email === user.email && u.password === user.password);
-    if (currentUser.length === 1) {
+    const currentUser = users.users.find(u => u.email === user.email && u.password === user.password);
+    if (currentUser != undefined) {
         return {
             type: LOGIN,
-            payload: user
+            payload: {...currentUser, isLogin: true }
         }
     }
     else {
         return {
             type: LOGIN,
-            payload: { msg: 'Account does not existed' }
+            payload: { isLogin: false, msg: 'Account does not existed' }
         }
     }
 }

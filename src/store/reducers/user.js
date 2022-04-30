@@ -3,7 +3,8 @@ import { LOGIN, LOGGOUT } from "../actions/types";
 const initState = {
     isLogin: false,
     email: '',
-    password: ''
+    password: '',
+    name: ''
 }
 
 const loginReducer = (state = initState, action) => {
@@ -12,9 +13,10 @@ const loginReducer = (state = initState, action) => {
         case LOGIN:
             return {
                 ...state,
-                isLogin: true,
+                isLogin: payload.isLogin,
                 email: payload.email,
-                password: payload.password
+                password: payload.password,
+                name: payload.name
             }
         case LOGGOUT:
             return state;
