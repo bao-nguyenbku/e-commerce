@@ -42,7 +42,7 @@ const NavBar = () => {
             className={`${commonStyles['button']} ${styles['register']}`}
             onClick={() => handleLoggout()}  
           >
-            Loggout
+            Log out
           </button>
         </>
         :
