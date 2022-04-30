@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import { useMatch } from 'react-router-dom';
-// import courses from '../../api/courses.json';
+import { useDispatch, useSelector } from 'react-redux';
+import { useCookies } from 'react-cookie';
+
 import { getCourse } from '../../store/actions/course';
 import { addItem } from '../../store/actions/cart';
-import { useDispatch, useSelector } from 'react-redux';
-
 import styles from './CourseDetail.module.scss';
 import Spinner from '../Spinner/Spinner';
 
 const CourseDetail = () => {
   const loading = useSelector((state) => state.course.loading);
   const course = useSelector((state) => state.course.course);
+  const [cookies, setCookie] = useCookies(['course-user']);
+
 
   let match = useMatch('/course/:id');
 
@@ -48,14 +50,23 @@ const CourseDetail = () => {
           </div>
           <div className={styles['payment']}>
             <p>{course.price} đ</p>
+            {cookies['course-user']
+            ?
+              <button
+                className={styles['payment-btn']}
+                onClick={(e) => {
+                  dispatch(addItem(course));
+                }}
+              >
+                Add to cart
+              </button>
+            :
             <button
               className={styles['payment-btn']}
-              onClick={(e) => {
-                dispatch(addItem(course));
-              }}
             >
-              Add to cart
+              Login to buy
             </button>
+            }
           </div>
         </div>
       </div>

@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "email": "team6@gmail.com",
+            "password": "12345",
+            "name": "6Team"
+        },
+        {
+            "email": "baonguyen@gmail.com",
+            "password": "abcde",
+            "name": "Bảo"
+        }
+    ]
+}

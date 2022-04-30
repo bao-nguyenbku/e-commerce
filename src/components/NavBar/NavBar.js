@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './NavBar.module.scss';
 import commonStyles from '../../styles/Common.module.scss';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(['course-user']);
   const totalQuantity = useSelector((state) => state.cart.quantity);
+
+  const handleLoggout = () => {
+    removeCookie('course-user', { path: '/', maxAge: 0 });
+  }
   return (
     <nav className={styles['container']}>
       <div className={styles['logo']}>
         <Link to='/'>
           <p>ConceptCourse</p>
-          {/* <img
-            src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg'
-            alt=''
-          /> */}
         </Link>
       </div>
       {/* <ul>
@@ -32,14 +34,29 @@ const NavBar = () => {
             {totalQuantity ? <span>{totalQuantity}</span> : ''}
           </Link>
         </span>
-        <Link to='/login'>
-          <button className={`${commonStyles['button']} ${styles['login']}`}>
-            Log in
+        {cookies['course-user'] 
+        ? 
+        <>
+          <h1>{cookies['course-user'].name}</h1>
+          <button 
+            className={`${commonStyles['button']} ${styles['register']}`}
+            onClick={() => handleLoggout()}  
+          >
+            Loggout
           </button>
-        </Link>
-        <button className={`${commonStyles['button']} ${styles['register']}`}>
-          Register
-        </button>
+        </>
+        :
+        <>
+          <Link to='/login'>
+            <button className={`${commonStyles['button']} ${styles['login']}`}>
+              Log in
+            </button>
+          </Link>
+          <button className={`${commonStyles['button']} ${styles['register']}`}>
+            Register
+          </button>
+        </>
+        }
       </div>
     </nav>
   );

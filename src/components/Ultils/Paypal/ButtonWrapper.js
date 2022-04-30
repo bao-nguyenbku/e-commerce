@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
+// import { useEffect } from 'react';
+import { PayPalButtons } from '@paypal/react-paypal-js';
 import emailjs from '@emailjs/browser';
 
 // This values are the props in the UI
