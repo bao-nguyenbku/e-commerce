@@ -29,7 +29,6 @@ const Login = () => {
     }))
   }
   useEffect(() => {
-    console.log(user)
     if (user.isLogin) {
       setCookie('course-user', {email: user.email, name: user.name}, { path: '/', maxAge: 3 * 24 * 3600 });
       return navigate('/');
