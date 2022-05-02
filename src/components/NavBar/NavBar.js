@@ -56,7 +56,7 @@ const NavBar = () => {
             {totalQuantity ? <span>{totalQuantity}</span> : ''}
           </Link>
         </span>
-        {isLogin
+        {cookies['course-user']
         ? 
         <>
           <h1>{cookies['course-user'].name}</h1>
