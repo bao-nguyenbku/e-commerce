@@ -3,6 +3,7 @@ import {
   GET_COURSE,
   COURSE_ERROR,
   CHANGE_LINK,
+  GET_PURCHASED_COURSE
 } from "../actions/types.js";
 
 const initialState = {
@@ -10,7 +11,7 @@ const initialState = {
   course: null,
   loading: true,
   error: {},
-
+  purchased: [],
   // Hung
   learningLink: "",
 };
@@ -42,6 +43,12 @@ const courseReducer = (state = initialState, action) => {
         ...state,
         learningLink: payload,
       };
+    case GET_PURCHASED_COURSE:
+      return {
+        ...state,
+        loading: false,
+        purchased: payload
+      }
     default:
       return state;
   }

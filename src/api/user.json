@@ -1,12 +1,14 @@
 {
     "users": [
         {
+            "id": 1,
             "email": "team6@gmail.com",
             "password": "12345",
             "name": "6Team"
         },
         {
-            "email": "baonguyen@gmail.com",
+            "id": 2,
+            "email": "nguyenthienbao0402@gmail.com",
             "password": "abcde",
             "name": "Bảo"
         }

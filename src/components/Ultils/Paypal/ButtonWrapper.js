@@ -1,10 +1,14 @@
 // import { useEffect } from 'react';
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import emailjs from '@emailjs/browser';
-
+import { useCookies } from 'react-cookie';
+import { useDispatch, useSelector } from 'react-redux';
 // This values are the props in the UI
 const style = { layout: 'vertical' };
 const ButtonWrapper = ({ currency, total }) => {
+  const [cookies, setCookie] = useCookies(['course-user']);
+  // const items = useSelector(state => state.cart.items);
+
   const sendEmail = () => {
     emailjs
       .send(
@@ -14,7 +18,7 @@ const ButtonWrapper = ({ currency, total }) => {
           from_name: 'ConceptCourse Team',
           user_name: 'Vĩ',
           message: 'Cảm ơn bạn đã mua và sử dụng khóa học của chúng mình ',
-          to_email: 'exstarquang@gmail.com',
+          to_email: cookies['course-user'] ? cookies['course-user'].email : '',
         },
         '4a72-CqJ445qQRxO9'
       )
@@ -45,6 +49,7 @@ const ButtonWrapper = ({ currency, total }) => {
           })
           .then((orderId) => {
             // Your code here after create the order
+            console.log(orderId);
             return orderId;
           });
       }}
@@ -60,21 +65,3 @@ const ButtonWrapper = ({ currency, total }) => {
 };
 
 export default ButtonWrapper;
-
-// import {
-//     PayPalScriptProvider,
-// } from "@paypal/react-paypal-js";
-// const currency = "USD";
-
-/* <div stylessss={{ maxWidth: '750px', minHeight: '200px' }}>
-<PayPalScriptProvider
-  options={{
-    'client-id': 'test',
-    components: 'buttons',
-    currency: 'USD',
-  }}
->
-  <ButtonWrapper currency={currency} showSpinner={false} />
-</PayPalScriptProvider>
-</div>
-</div> */

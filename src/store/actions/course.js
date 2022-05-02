@@ -1,6 +1,12 @@
-import { GET_COURSE, GET_COURSES, COURSE_ERROR, CHANGE_LINK } from "./types.js";
+import { 
+  GET_COURSE, 
+  GET_COURSES, 
+  COURSE_ERROR, 
+  CHANGE_LINK, 
+  GET_PURCHASED_COURSE 
+} from "./types.js";
 import coursesData from "../../api/courses.json";
-
+import purchasedData from '../../api/purchasedCourses.json';
 export const getCourses = () => async (dispatch) => {
   try {
     const res = coursesData.courses;
@@ -59,3 +65,10 @@ export const changeLesson = (link) => async (dispatch) => {
     });
   }
 };
+
+export const getPurchasedCourses = () => {
+  return {
+    type: GET_PURCHASED_COURSE,
+    payload: purchasedData.courses
+  }
+}

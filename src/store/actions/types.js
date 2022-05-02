@@ -7,3 +7,4 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 export const CHANGE_LINK = "CHANGE_LINK";
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
+export const GET_PURCHASED_COURSE = 'GET_PURCHASED_COURSE';
