@@ -11,6 +11,12 @@
             "email": "nguyenthienbao0402@gmail.com",
             "password": "abcde",
             "name": "Bảo"
+        },
+        {
+            "id": 3,
+            "email": "exstarquang@gmail.com",
+            "password": "abcde",
+            "name": "Vĩ"
         }
     ]
 }
