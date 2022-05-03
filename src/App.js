@@ -10,11 +10,13 @@ import Login from './components/Login/Login';
 import CourseDetail from './components/CourseDetail/CourseDetail';
 import Cart from './components/Cart/Cart';
 import CourseLearning from './components/CourseLearning/CourseLearning';
+import Quiz from "./components/CourseLearning/Quiz";
 import PrivateRoute from './components/PrivateRoute';
 import './App.scss';
 import store from './store/index';
 import { getCourses } from './store/actions/course';
 import Checkout from './components/Cart/Checkout/Checkout';
+
 
 const App = () => {
   useEffect(() => {
@@ -50,7 +52,10 @@ const App = () => {
                 <Route path='/*' element={<PrivateRoute />}>
                   <Route path='cart/checkout' element={<Checkout />}/>
                   <Route path='learning' element={<CourseLearning />}/>
+                  
                 </Route>
+                 
+                <Route path="/quiz" element={<Quiz />} />
 
               </Routes>
             </div>
@@ -58,6 +63,7 @@ const App = () => {
         </CookiesProvider>
       </Provider>
     </PayPalScriptProvider>
+
   );
 };
 
