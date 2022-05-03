@@ -9,6 +9,7 @@ import Login from "./components/Login/Login";
 import CourseDetail from "./components/CourseDetail/CourseDetail";
 import Cart from "./components/Cart/Cart";
 import CourseLearning from "./components/CourseLearning/CourseLearning";
+import Quiz from "./components/CourseLearning/Quiz";
 
 import "./App.scss";
 import store from "./store/index";
@@ -42,11 +43,12 @@ const App = () => {
             <Route path="/cart/checkout" element={<Checkout />} />
 
             <Route path="/learning" element={<CourseLearning />} />
-            <Route
+            <Route path="/quiz" element={<Quiz />} />
+            {/* <Route
               path="/learning/:videoId"
               element={<CourseLearning />}
               exact
-            />
+            /> */}
           </Routes>
         </div>
       </div>
