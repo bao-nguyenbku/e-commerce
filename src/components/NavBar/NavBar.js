@@ -31,7 +31,7 @@ const NavBar = () => {
         </Link>
       </div>
       <div className={styles['user']}>
-        {isLogin && 
+        {cookies['course-user'] && 
         <ul>
           <a>My courses</a>
           <div className={`${styles['dropdown-menu']} ${activeClass ? styles['drop-active'] : ''}`}>

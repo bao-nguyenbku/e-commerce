@@ -10,6 +10,7 @@ const CourseCollapse = () => {
       {data["chap"].map((item, index) => (
         <CollapseCard key={index} title={item.title} lessons={item.lessons} />
       ))}
+      <CollapseCard key={data['chap'].length} title='Quiz chương 1 & 2' lessons={['Quiz']}/>
     </div>
   );
 };
