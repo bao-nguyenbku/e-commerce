@@ -51,9 +51,9 @@ const App = () => {
                 <Route path="/*" element={<PrivateRoute />}>
                   <Route path="cart/checkout" element={<Checkout />} />
                   <Route path="learning" element={<CourseLearning />} />
+                  <Route path="quiz" element={<Quiz />} />
                 </Route>
 
-                <Route path="/quiz" element={<Quiz />} />
               </Routes>
             </div>
           </div>
