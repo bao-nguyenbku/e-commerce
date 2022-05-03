@@ -1,0 +1,10 @@
+{
+    "courses": [
+        {
+            "userId": 2,
+            "courseId": 6,
+            "name": "Nguyên lý ngôn ngữ lập trình",
+            "image": "post-thumb-ngon-ngu-lap-trinh.jpg"
+        }
+    ]
+}

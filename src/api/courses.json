@@ -29,6 +29,12 @@
             "name": "Lập trình ứng dụng di động",
             "image": "mobile-app.jpg",
             "price": 15000
+        },
+        {
+            "id": 6,
+            "name": "Nguyên lý ngôn ngữ lập trình",
+            "image": "post-thumb-ngon-ngu-lap-trinh.jpg",
+            "price": 17000
         }
     ]
 }

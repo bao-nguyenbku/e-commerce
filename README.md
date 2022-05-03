@@ -75,4 +75,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 2. Change `build command` from npm run build to `CI='' npm run build`
 
 ### Link to website
-[https://e-commerce-6-team.netlify.app/](https://e-commerce-6-team.netlify.app/)
+[https://conceptcourse.netlify.app](https://conceptcourse.netlify.app)
